@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int roomch=sc.nextInt();
+        int days=sc.nextInt();
+        int cost=sc.nextInt();
+        int labfees=sc.nextInt();
+         int insurance=sc.nextInt();
+        int mul=roomch*days;
+        int add=mul+cost+labfees;
+        int sub=add-insurance;
+       
+        System.out.println(sub);
+    }
+}
