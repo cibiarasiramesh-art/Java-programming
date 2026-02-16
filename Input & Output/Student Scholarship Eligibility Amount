@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double fees=sc.nextInt();
+        double sholarship=sc.nextInt();
+        double examfee=sc.nextInt();
+        double libraryfees=sc.nextDouble();
+        double totalfee=fees*sholarship/100;
+        double finalamt=fees-totalfee;
+        int value=(int)(finalamt+examfee+libraryfees);
+        System.out.println(value);
+    }
+}
