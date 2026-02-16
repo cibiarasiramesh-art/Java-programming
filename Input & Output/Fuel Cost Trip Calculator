@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double distance=sc.nextInt();
+        double mileage=sc.nextInt();
+        double fuelprice=sc.nextInt();
+        double tollcharge=sc.nextInt();
+        double total=distance*fuelprice;
+        double finaltotal=total/mileage;
+        int value=(int)(finaltotal+tollcharge);
+        System.out.println(value);
+    }
+}
