@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double rods=sc.nextInt();
+        double hrs=sc.nextInt();
+        double overtime=sc.nextInt();
+        double rejectedrods=sc.nextInt();
+        double total=rods*hrs;
+        double time=overtime-rejectedrods;
+        double usablerods=total+time;
+        int value=(int)(usablerods);
+        System.out.println(value);
+    }
+}
