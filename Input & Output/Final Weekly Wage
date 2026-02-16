@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double days=sc.nextInt();
+        double amt=sc.nextInt();
+        double bonus=sc.nextInt();
+        double charge=sc.nextInt();
+        double total=days*amt;
+        double finaltotal=total+bonus;
+        int value=(int)(finaltotal-charge);
+        System.out.println(value);
+    }
+}
