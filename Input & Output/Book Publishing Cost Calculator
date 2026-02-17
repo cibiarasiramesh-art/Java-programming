@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int copies=sc.nextInt();
+        int cost=sc.nextInt();
+        int edit=sc.nextInt();
+        int design=sc.nextInt();
+         int commission=sc.nextInt();
+           int mark=sc.nextInt();
+        int mul=copies*cost;
+        int add=mul+edit+design;
+        int sub=add-commission-mark;
+       
+        System.out.println(sub);
+    }
+}
