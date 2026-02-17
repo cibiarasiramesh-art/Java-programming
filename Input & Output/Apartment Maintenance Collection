@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int main=sc.nextInt();
+        int parking=sc.nextInt();
+        int hall=sc.nextInt();
+        int sec=sc.nextInt();
+         int ele=sc.nextInt();
+           int clean=sc.nextInt();
+        int add=main+parking+hall;
+        int sub=add-sec-ele-clean;
+       
+        System.out.println(sub);
+    }
+}
