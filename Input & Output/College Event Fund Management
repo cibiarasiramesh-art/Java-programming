@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int reg=sc.nextInt();
+        int sp=sc.nextInt();
+        int stall=sc.nextInt();
+        int stage=sc.nextInt();
+         int cle=sc.nextInt();
+         int mark=sc.nextInt();
+        int add=reg+sp+stall;
+        int sub=add-stage-cle-mark;
+       
+        System.out.println(sub);
+    }
+}
