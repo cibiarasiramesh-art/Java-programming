@@ -1,0 +1,19 @@
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int resusage=sc.nextInt();
+        int resrate=sc.nextInt();
+        int comusage=sc.nextInt();
+        int comrate=sc.nextInt();
+         int connection=sc.nextInt();
+           int penalty=sc.nextInt();
+        int main=sc.nextInt();
+        int treatment=sc.nextInt();
+        int mul=resusage*resrate;
+        int mul1=comrate*comusage;
+        int add=mul+mul1+connection+penalty;
+        int sub=add-main-treatment;
+       
+        System.out.println(sub);
+    }
+}
