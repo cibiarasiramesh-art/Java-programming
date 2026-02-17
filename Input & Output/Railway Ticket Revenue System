@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int genpass=sc.nextInt();
+        int genfars=sc.nextInt();
+        int acpass=sc.nextInt();
+        int acfare=sc.nextInt();
+         int platform=sc.nextInt();
+         int main=sc.nextInt();
+         int fuel=sc.nextInt();
+        int mul=genpass*genfars;
+        int mul2=acpass*acfare;
+        int add=mul+mul2+platform;
+        int sub=add-main-fuel;
+       
+        System.out.println(sub);
+    }
+}
