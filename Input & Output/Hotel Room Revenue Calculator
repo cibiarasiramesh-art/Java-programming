@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int room=sc.nextInt();
+        int price=sc.nextInt();
+        int service=sc.nextInt();
+        int commision=sc.nextInt();
+        int mul=room*price;
+        int add=mul+service;
+        int sub=add-commision;
+       
+        System.out.println(sub);
+    }
+}
