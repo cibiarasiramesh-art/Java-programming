@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class Main{
+public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int perfomance=sc.nextInt();
+    int years=sc.nextInt();
+    sc.nextLine();
+    String dept=sc.nextLine();
+    double salary=sc.nextDouble();
+    int percent=0;
+    String status;
+    double bonus=0;
+    if(perfomance >=3){
+        status="eligible";
+        if(dept.equals("critical")){
+            if(perfomance==5 && years>5){
+                percent=25;
+            }
+            else if(perfomance==4 && years>10){
+                percent=22;
+            }
+            else if(perfomance==4){
+                percent=15;
+            }
+            else if(perfomance==3){
+                percent=10;
+            }
+            bonus=salary * percent/100.0;
+        }
+        else if(dept.equals("noncritical")){
+            if(perfomance==5){
+                percent=18;
+            }
+            else if(perfomance==4){
+                percent=12;
+            }
+            else if(perfomance==3){
+                percent=8;
+            }
+        }
+        bonus=salary * percent/100.0;
+        
+    }
+    else{
+        status="not eligible";
+    }
+
+    System.out.println("performance rating: "+ perfomance);
+    System.out.println("yeats of service: "+years);
+    System.out.println("department: "+dept);
+    System.out.println("percentage: "+percent+"%");
+    System.out.println("bonus amount: $"+bonus);
+    System.out.println("Status: "+status);
+}
+    
+}
