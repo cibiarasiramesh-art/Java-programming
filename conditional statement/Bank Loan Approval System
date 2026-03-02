@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int creditScore = sc.nextInt();
+        double annualIncome = sc.nextDouble();
+        double debtRatio = sc.nextDouble();
+        sc.nextLine();
+        String loanType = sc.nextLine().trim();
+
+        String creditCategory = "";
+        String debtCategory = "";
+        String decision = "Rejected";
+        double maxAmount = 0.0;
+
+        if (creditScore < 600 || debtRatio > 50) {
+            decision = "Rejected";
+        } else {
+
+            if (creditScore >= 750)
+                creditCategory = "Excellent";
+            else if (creditScore >= 700)
+                creditCategory = "Good";
+            else if (creditScore >= 650)
+                creditCategory = "Fair";
+            else
+                creditCategory = "Poor";
+
+            if (debtRatio <= 30)
+                debtCategory = "Low";
+            else if (debtRatio <= 40)
+                debtCategory = "Moderate";
+            else
+                debtCategory = "High";
+
+            if (loanType.equalsIgnoreCase("Home")) {
+
+                if (creditCategory.equals("Excellent") && debtCategory.equals("Low")) {
+                    decision = "Approved";
+                    maxAmount = 4 * annualIncome;
+                } else if ((creditCategory.equals("Good") || creditCategory.equals("Fair"))
+                        && debtCategory.equals("Moderate")) {
+                    decision = "Needs Review";
+                    maxAmount = 3 * annualIncome;
+                }
+
+            } else if (loanType.equalsIgnoreCase("Personal")) {
+
+                if (creditCategory.equals("Excellent") && debtCategory.equals("Low")) {
+                    decision = "Approved";
+                    maxAmount = annualIncome;
+                } else if (creditCategory.equals("Fair") && debtCategory.equals("Moderate")) {
+                    decision = "Needs Review";
+                    maxAmount = 0.5 * annualIncome;
+                }
+
+            } else if (loanType.equalsIgnoreCase("Business")) {
+
+                if ((creditCategory.equals("Excellent") || creditCategory.equals("Good"))
+                        && (debtCategory.equals("Low") || debtCategory.equals("Moderate"))) {
+                    decision = "Approved";
+                    maxAmount = 3 * annualIncome;
+                }
+            }
+        }
+
+        System.out.println("Credit Score: " + creditScore);
+        System.out.println("Annual Income: $" + annualIncome);
+        System.out.println("Debt-to-Income Ratio: " + debtRatio + "%");
+        System.out.println("Loan Type: " + loanType);
+        System.out.println("Decision: " + decision);
+        System.out.println("Maximum Loan Amount: $" + maxAmount);
+    }
+}
