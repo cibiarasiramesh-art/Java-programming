@@ -1,0 +1,72 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        double gpa=sc.nextDouble();
+        double income=sc.nextDouble();
+        int extrascore=sc.nextInt();
+        sc.nextLine();
+        String type=sc.nextLine();
+        String award="none";
+        double amt=0.0;
+        
+        String st=" ";
+        if(gpa>=2.5){
+            st="eligible";
+            if(type.equalsIgnoreCase("merit")){
+                  if(gpa>=3.8 && extrascore>=80){
+                  award="full";
+                      amt=25000;
+                  }
+                   else if(gpa>=3.5 && extrascore>=70){
+                       award="partial";
+                       amt=15000;
+                   }
+                else if(gpa>=3.5 && extrascore>=60){
+                    award="minimal";
+                    amt=8000;
+                }
+            }
+            else if(type.equalsIgnoreCase("needbased")){
+                if(income<=30000 && gpa>=3.5){
+                    award="full";
+                    amt=30000;
+                }
+                else if(income<=50000 && gpa>=3.0){
+                    award="partial";
+                    amt=18000;
+                }
+                else if(income<=70000 && gpa>=2.8){
+                    award="minimal";
+                    amt=10000;
+                }
+            }
+            else if(type.equalsIgnoreCase("sports")){
+                if(extrascore>=85 && gpa>=3.0){
+                    award="full";
+                    amt=22000;
+                }
+                else if(extrascore>=75 && gpa>=2.8){
+                    award="partial";
+                    amt=20000;
+                }
+                else if(extrascore>=65 && gpa>=2.5){
+                    award="minimal";
+                    amt=12000;
+                }
+            }
+          
+         }
+        else{
+            st="not eligible";
+        }
+        System.out.println("gpa: "+gpa);
+          System.out.println("family income: "+income);
+          System.out.println("extracurricular score: "+extrascore);
+          System.out.println("scholarship type: "+type);
+          System.out.println("eligible: "+st);
+          System.out.println("award amt: "+amt);
+          System.out.println("award category: "+award);
+        
+    }
+}
