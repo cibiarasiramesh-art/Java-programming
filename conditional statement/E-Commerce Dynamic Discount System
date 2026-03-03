@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String loyalty=sc.nextLine();
+        double cartvalue=sc.nextDouble();
+        sc.nextLine();
+        String product=sc.nextLine();
+        String member=sc.nextLine();
+        int basedis=0;
+        if(loyalty.equalsIgnoreCase("bronze")){
+            basedis=5;
+        }
+        else if(loyalty.equalsIgnoreCase("silver")){
+            basedis=8;
+        }
+        else if(loyalty.equalsIgnoreCase("gold")){
+            basedis=12;
+        }
+        else if(loyalty.equalsIgnoreCase("platinum")){
+            basedis=15;
+        }
+        int adddis=0;
+        if(cartvalue>=500 && cartvalue<=999){
+            adddis=3;
+        }
+        else if(cartvalue>=1000 && cartvalue<=1999){
+            adddis=5;
+        }
+        else if(cartvalue>=2000){
+            adddis=7;
+        }
+        if(product.equalsIgnoreCase("electronics")){
+            if(member.equalsIgnoreCase("prime")){
+                adddis=adddis+5;
+            }
+        }
+        else if(product.equalsIgnoreCase("fashion")){
+            adddis=adddis+3;
+        }
+        else if(product.equalsIgnoreCase("books")){
+            if(member.equalsIgnoreCase("prime")){
+                 adddis=adddis+5;
+            }
+        }
+        else if(product.equalsIgnoreCase("groceries")){
+            if(cartvalue>300){
+                adddis=adddis+2;
+            }
+        }
+        double totaldis=basedis+adddis;
+        double finalprice=cartvalue*(1-totaldis/100.0);
+        double savings=cartvalue-finalprice;
+        System.out.println("loyalty tier: "+loyalty);
+        System.out.println("cart value: $"+cartvalue);
+        System.out.println("product category: "+product);
+        System.out.println("membership: "+member);
+        System.out.println("base discount: "+basedis+"%");
+        System.out.println("additional discount: "+adddis+"%");
+        System.out.println("total discount: "+totaldis+"%");
+        System.out.println("final price: $"+finalprice);
+        System.out.println("savings: $"+savings);
+    }
+}
