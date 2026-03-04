@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        int lowstockcount=0;
+        int criticalcount=0;
+        int sum=0;
+        
+        for(int i=1;i<=n;i++){
+            sc.nextLine();
+            String name=sc.nextLine();
+            int currentstock=sc.nextInt();
+            int minimumstock=sc.nextInt();
+            
+            String status="";
+            int qty=0;
+            
+            if(currentstock>=minimumstock){
+                status="Adequate";
+                qty=0;
+            }
+            else if(currentstock<minimumstock && currentstock>=minimumstock/2){
+                status="Low Stock";
+                qty=(minimumstock-currentstock)+(minimumstock/2);
+                lowstockcount++;
+            }
+            else{
+                status="Critical";
+                qty=(int)((minimumstock-currentstock)+(minimumstock*1.5));
+                criticalcount++;
+            }
+            
+            sum=sum+qty;
+            
+            System.out.println("Product: "+name);
+            System.out.println("Current Stock: "+currentstock);
+            System.out.println("Minimum Stock: "+minimumstock);
+            System.out.println("Status: "+status);
+            System.out.println("Reorder Quantity: "+qty);
+            System.out.println();
+        }
+        
+        System.out.println("Total Products: "+n);
+        System.out.println("Low Stock Items: "+lowstockcount);
+        System.out.println("Critical Items: "+criticalcount);
+        System.out.println("Total Reorder Quantity: "+sum);
+    }
+}
