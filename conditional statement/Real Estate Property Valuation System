@@ -1,0 +1,84 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+
+        String location=sc.nextLine();
+        int sqfootage=sc.nextInt();
+        int age=sc.nextInt();
+        int score=sc.nextInt();
+
+        double baseprice=0;
+
+        if(location.equalsIgnoreCase("Prime")){
+            baseprice=400.0;
+        }
+        else if(location.equalsIgnoreCase("Urban")){
+            baseprice=300.0;
+        }
+        else if(location.equalsIgnoreCase("Suburban")){
+            baseprice=180.0;
+        }
+        else if(location.equalsIgnoreCase("Rural")){
+            baseprice=100.0;
+        }
+
+        double adj=0;
+
+        if(age>=0 && age<=5){
+            adj=0;
+        }
+        else if(age>=6 && age<=15){
+            adj=-10;
+        }
+        else if(age>=16 && age<=30){
+            adj=-20;
+        }
+        else{
+            adj=-30;
+        }
+
+        double basevalue=sqfootage*baseprice;
+        double adjustedvalue=basevalue*(1+adj/100);
+
+        double amenity=0;
+
+        if(score>=80 && score<=100){
+            amenity=basevalue*0.10;
+        }
+        else if(score>=60 && score<=79){
+            amenity=basevalue*0.05;
+        }
+        else if(score>=40 && score<=59){
+            amenity=basevalue*0.02;
+        }
+        else{
+            amenity=0;
+        }
+
+        double finalvalue=adjustedvalue+amenity;
+
+        String marketcategory;
+
+        if((location.equalsIgnoreCase("Prime") || 
+            location.equalsIgnoreCase("Urban")) && age<=15){
+            marketcategory="Hot";
+        }
+        else if(location.equalsIgnoreCase("Suburban")){
+            marketcategory="Stable";
+        }
+        else{
+            marketcategory="Slow";
+        }
+
+        System.out.println("Location Tier: "+location);
+        System.out.println("Square Footage: "+sqfootage+" sq ft");
+        System.out.println("Property Age: "+age+" years");
+        System.out.println("Amenity Score: "+score);
+        System.out.println("Base Price Per Sq Ft: $"+baseprice);
+        System.out.println("Age Adjustment: "+(int)adj+"%");
+        System.out.println("Amenity Bonus: $"+amenity);
+        System.out.println("Estimated Property Value: $"+finalvalue);
+        System.out.println("Market Category: "+marketcategory);
+    }
+}
