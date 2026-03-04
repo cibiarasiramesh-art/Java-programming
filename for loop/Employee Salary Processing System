@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        double total=0;
+        sc.nextLine();
+        for(int i=1;i<=n;i++){
+           
+            
+            String name=sc.nextLine();
+            int basesalary=sc.nextInt();
+            int performancerating=sc.nextInt();
+           
+             int increment=0;
+       
+           
+         
+            if(performancerating==5){
+                increment=15;
+            }
+            else if(performancerating==4){
+                increment=10;
+            }
+            else if(performancerating==3){
+                increment=3;
+            }
+            else if(performancerating==2){
+                increment=2;
+            }
+            else if(performancerating==1){
+                increment=0;
+            }
+            double finalsalary=0.0;
+            finalsalary=basesalary*(1+increment/100.0);
+            total=total+finalsalary;
+            System.out.println("employee: "+name);
+            System.out.println("base salary: "+(double)basesalary); 
+            System.out.println("performance rating: "+performancerating);
+            System.out.println("increment: "+increment);
+            System.out.println(String.format("final salary: %.1f",finalsalary));
+            System.out.println();
+            if(i<n){
+                sc.nextLine();
+            }
+            
+            
+            
+        }
+        double avgsalary=total/n;
+        System.out.println("total employees processed: "+n);
+        System.out.println("total payroll: "+(double)total);
+         System.out.println("average salary: "+avgsalary); 
+    }
+}
