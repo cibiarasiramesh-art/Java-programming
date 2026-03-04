@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        int passcount=0;
+        int failcount=0;
+        int sum=0;
+        int max=0;
+        
+        for(int i=1;i<=n;i++){
+            sc.nextLine();
+            String name=sc.nextLine();
+            int score=sc.nextInt();
+            String grade=" ";
+            
+            String status;
+            if(score>=85&&score<=100){
+                grade="A";
+            }
+            else if(score>=70&&score<=84){
+                grade="B";
+            }
+             else if(score>=60&&score<=69){
+                grade="c";
+            }
+             else if(score>=0&&score<=49){
+                grade="D";
+            }
+            if(score>=60){
+                status="pass";
+                passcount++;
+            }
+            else{
+                status="fail";
+                failcount++;
+            }
+            max=Math.max(max,score);
+            
+            if(score>max){
+                max=score;
+            }
+             System.out.println("student: "+name);
+        System.out.println("score: "+score);
+        System.out.println("letter grade: "+grade);
+        System.out.println("status: "+status);
+            System.out.println();
+        }
+        double avg=sum/n;
+        System.out.println("total students: "+n);
+        System.out.println(String.format("class average: %.2f",avg));
+        System.out.println("highest score: "+max);
+        System.out.println("students passed: "+passcount);
+        System.out.println("students failed: "+failcount);
+        
+       
+        
+    }
+}
