@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        double max=0.0;
+        
+        
+        String corrrepname=" ";
+        double sum=0.0;
+        double add=0.0;
+        for(int i=1;i<=n;i++){
+            sc.nextLine();
+            String repname=sc.nextLine();
+            int rate=0;
+            double bonus=0.0;
+            double salesamount=sc.nextDouble();
+            if(salesamount>=0 && salesamount<=40000){
+                rate=5;
+            }
+            else if(salesamount>=40001 && salesamount<=80000){
+                rate=8;
+            }
+             else if(salesamount>=80001 && salesamount<=100000){
+                rate=10;
+            }
+             else if(salesamount>=100001 && salesamount<=150000){
+                rate=12;
+            }
+             else if(salesamount>150000){
+                rate=15;
+            }
+            double commision=salesamount*(rate/100.0);
+            if(salesamount>=100000){
+                bonus=2000;
+            }
+            else if(salesamount>=150000){
+                bonus=3000;
+            }
+            double totalpayout=commision+bonus;
+            if(salesamount>max){
+                max=salesamount;
+                corrrepname=repname;
+            }
+            sum=sum+salesamount;
+            add=add+commision;
+            System.out.println("sales rep: "+repname);
+              System.out.println("sales amount: "+salesamount);
+              System.out.println("commision rate: "+rate);
+              System.out.println("commision earned: "+commision);
+              System.out.println("bonus: "+bonus);
+              System.out.println("total payout: "+totalpayout);
+            System.out.println();
+            
+        }
+          System.out.println("total sales reps: "+n);
+          System.out.println("total sales: "+sum);
+          System.out.println("total commision: "+add);
+          System.out.println("top performer: "+corrrepname);
+    }
+}
