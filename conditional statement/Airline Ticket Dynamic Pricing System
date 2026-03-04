@@ -1,0 +1,75 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String booking=sc.nextLine();
+        int days=sc.nextInt();
+        double seat=sc.nextDouble();
+        sc.nextLine();
+        String routetype=sc.nextLine();
+        double baseprice=0.0;
+        if(booking.equalsIgnoreCase("economy")){
+            if(routetype.equalsIgnoreCase("domestic")){
+                baseprice=200;
+             }
+            else if(routetype.equalsIgnoreCase("intshort")){
+                baseprice=500;
+            }
+             else if(routetype.equalsIgnoreCase("intlong")){
+                baseprice=800;
+            }
+         }
+        else if(booking.equalsIgnoreCase("business")){
+             if(routetype.equalsIgnoreCase("domestic")){
+                baseprice=600;
+             }
+             else if(routetype.equalsIgnoreCase("intshort")){
+                baseprice=1500;
+             }
+             else if(routetype.equalsIgnoreCase("intlong")){
+                baseprice=2500;
+             }
+        }
+         else if(booking.equalsIgnoreCase("first")){
+             if(routetype.equalsIgnoreCase("domestic")){
+                baseprice=1000;
+             }
+             else if(routetype.equalsIgnoreCase("intshort")){
+                baseprice=3000;
+             }
+             else if(routetype.equalsIgnoreCase("intlong")){
+                baseprice=5000;
+             }
+        }
+        double demandmul=0.0;
+        String demand=" ";
+        if(seat<30 && days<14){
+            demandmul=1.8;
+            demand="highdemand";
+        }
+        else if(seat<50 && days<30){
+            demandmul=1.5;
+            demand="highdemand";
+        }
+        else if((seat<60 || days<30) && (days>=30 || days<=60)){
+            demandmul=1.0;
+            demand="moderate";
+        }
+        else if(seat>=60 && days>60){
+            demandmul=0.8;
+            demand="lowdemand";
+        }
+        double finalprice=baseprice*demandmul;
+        System.out.println("booking class: "+booking);
+         System.out.println("days until departure: "+days);
+         System.out.println("seat availability: "+seat);
+         System.out.println("route type: "+routetype);
+         System.out.println("base price: "+baseprice);
+         System.out.println("demand multiplier: "+demandmul);
+         System.out.println("final ticker price: "+finalprice);
+         System.out.println("pricing category: "+demand);
+        
+        
+        
+    }
+}
