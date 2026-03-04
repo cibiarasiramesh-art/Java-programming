@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc =new Scanner(System.in);
+        int heartrate=sc.nextInt();
+        int bloodpressure=sc.nextInt();
+        double temp=sc.nextDouble();
+        sc.nextLine();
+        String symptom=sc.nextLine();
+        String priority=" ";
+        String action=" ";
+        int time=0;
+        if((heartrate<50 || heartrate>130) && (bloodpressure>180 || bloodpressure<90) && (temp>103 || temp<96) && (symptom.equalsIgnoreCase("lifethreatening"))){
+            priority="critical";
+            time=0;
+            action="Immediate Emergency Care";
+        }
+        else if(((heartrate>=50 || heartrate<=60) || (heartrate>=110 || heartrate<=130)) && ((bloodpressure>=160||bloodpressure<=180) || (bloodpressure>=90 || bloodpressure<=100)) && ((temp>=101 || temp<=103)||(temp>=96 || temp<=97)) && (symptom.equalsIgnoreCase("severe"))){
+            priority="urgent";
+            time=20;
+            action="Priority Medical Attention";
+        }
+        else if((heartrate>=60 || heartrate<=100) && (bloodpressure>=100 || bloodpressure<=160) && (temp>=97||temp<=101)){
+            priority="standard";
+            time=45;
+            action="Standard Examination";
+            
+        }
+        else{
+            priority="non-urgent";
+            time=90;
+            action="routine checkup";
+        }
+        System.out.println("heart rate: "+heartrate);
+        System.out.println("blood pressure: "+bloodpressure);
+        System.out.println("temperature: "+temp);
+        System.out.println("symptom severity: "+symptom);
+        System.out.println("triage priority: "+priority);
+        System.out.println("estimated wait time: "+time);
+        System.out.println("recommended action: "+action);
+        
+    }
+}
