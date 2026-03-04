@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        double sum=0.0;
+        double max=0.0;
+        int count=0;
+        int highestoccupancyrate=0;
+        for(int i=1;i<=n;i++){
+            int day=sc.nextInt();
+            int room=sc.nextInt();
+            int totalroom=sc.nextInt();
+            String status=" ";
+            
+            double occupancyrate=(room/totalroom)*100;
+            if(occupancyrate<60){
+                status="low";
+            }
+            else if(occupancyrate>=60 && occupancyrate<=79){
+                status="moderate";
+            }
+            else if(occupancyrate>=80 && occupancyrate<=99){
+                status="high";
+            }
+            else if(occupancyrate==100){
+                status="full";
+                count++;
+            }
+            
+            if(occupancyrate>max){
+                max=occupancyrate;
+                highestoccupancyrate=day;
+            }
+            sum=sum+occupancyrate;
+            System.out.println("day: "+i);
+            System.out.println("rooms occupied: "+room);
+            System.out.println("total rooms: "+totalroom);
+            System.out.println("occpancy rate: "+occupancyrate);
+            System.out.println("status: "+status);
+            System.out.println();
+         }
+        double avg=sum/n;
+        System.out.println("total days analyzed: "+n);
+        System.out.println("average occupancy rate: "+avg);
+        System.out.println("peak occupancy day: "+highestoccupancyrate);
+        System.out.println("days at full capacity: "+count);
+        
+        
+        
+    }
+}
