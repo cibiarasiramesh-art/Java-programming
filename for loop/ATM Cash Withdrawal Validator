@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        double initialbalance=sc.nextDouble();
+        int n=sc.nextInt();
+        double totalwithdrawal=0.0;
+        int approved=0;
+        int deny=0;
+        String status=" ";
+        for(int i=1;i<=n;i++){
+           
+            double withdrawalamt=sc.nextDouble();
+            
+            if(withdrawalamt<=initialbalance){
+                status="approved";
+                 totalwithdrawal+=withdrawalamt;
+                double currentbal=initialbalance-withdrawalamt;
+                initialbalance=currentbal;
+                approved++;
+                 System.out.println("transaction "+i+": $"+withdrawalamt);
+            System.out.println("status: "+status);
+            System.out.println("remaining balance: &"+initialbalance);
+            System.out.println();
+            }
+            else{
+                status="deny";
+                
+                deny++;
+                System.out.println("transaction "+i+": "+withdrawalamt);
+            System.out.println("status: "+status);
+                System.out.println("reason: insuifficient funds");
+            System.out.println("remaining balance: "+initialbalance);
+            System.out.println();
+            }
+           
+           
+
+        }
+        
+        System.out.println("total transaction: "+n);
+        System.out.println("successful withdrawals: "+approved);
+        System.out.println("failed withdrawal: "+deny);
+        System.out.println("final balance: "+initialbalance);
+        System.out.println("total withdrawan; "+totalwithdrawal);
+    }
+}
