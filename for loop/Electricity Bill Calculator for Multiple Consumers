@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        String category=" ";
+        double sumunit=0.0;
+        double sumbill=0.0;
+        double bill=0.0;
+        for(int i=1;i<=n;i++){
+            sc.nextLine();
+            String consumerid=sc.nextLine();
+            int unitconsumed=sc.nextInt();
+            if(unitconsumed>=0 && unitconsumed<=100){
+                bill=0.10*unitconsumed;
+            }
+            else if(unitconsumed>=101 && unitconsumed<=200){
+                bill=0.13*unitconsumed;
+            }
+            else if(unitconsumed<=201 && unitconsumed<=300){
+                bill=0.16*unitconsumed;
+            }
+            else if(unitconsumed>300){
+                bill=0.20*unitconsumed;
+            }
+            
+            if(unitconsumed<=200){
+                category="low usage";
+            }
+            else if(unitconsumed>200 && unitconsumed<=300){
+                category="medium usage";
+            }
+            else if(unitconsumed>300){
+                category="high usage";
+            }
+            sumunit=sumunit+unitconsumed;
+            sumbill=sumbill+bill;
+            System.out.println("consumer id: "+consumerid);
+            System.out.println("units consumed: "+unitconsumed);
+            System.out.println(String.format("bill amount: %.1f",bill));
+            System.out.println("category: "+category);
+            System.out.println();
+        }
+        double avg=sumbill/n;
+        System.out.println("total consumer: "+n);
+        System.out.println("total units consumed: "+sumunit);
+        System.out.println("total revenue: "+sumbill);
+        System.out.println(String.format("average bill: %.2f\n",avg));
+    }
+}
