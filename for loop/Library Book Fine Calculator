@@ -1,0 +1,79 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        double dailyfinerates=0.0;
+        double actualfine=0.0;
+        String capapplied=" ";
+        int overdue=0;
+        double totalfine=0.0;
+        double fine=0.0;
+        sc.nextLine();
+        for(int i=1;i<=n;i++){
+            String booktype=sc.next();
+            int dayslate=sc.nextInt();
+            if(booktype.equals("regular")){
+                dailyfinerates=0.50;
+            }
+            else if(booktype.equals("reference")){
+                dailyfinerates=1.00;
+            }
+            else if(booktype.equals("magazine")){
+                dailyfinerates=0.25;
+            }
+            fine=dayslate*dailyfinerates;
+            if(booktype.equals("regular")){
+                if(fine>10){
+                    actualfine=10;
+                    capapplied="yes";
+                }
+                else{
+                    actualfine=fine;
+                    capapplied="no";
+                }
+            }
+            else if(booktype.equals("reference")){
+                if(fine>20){
+                    actualfine=20;
+                    capapplied="yes";
+                }
+                else{
+                    actualfine=fine;
+                    capapplied="no";
+                }
+            }
+            else if(booktype.equals("magazine")){
+                if(fine>5){
+                    actualfine=5;
+                    capapplied="yes";
+                }
+                else{
+                    actualfine=fine;
+                    capapplied="no";
+                }
+                
+                
+            }
+            if(dayslate>0){
+                    overdue++;
+                }
+            totalfine+=actualfine;
+            System.out.println("book "+i+": "+booktype);
+            System.out.println("days late: "+dayslate);
+            System.out.println("days fine: $"+dailyfinerates);
+            System.out.println("calculated fine: "+fine);
+            System.out.println("actual fine: $"+actualfine);
+            System.out.println("cap applied: "+capapplied);
+            System.out.println();
+            
+            
+        }
+        double avg=totalfine/n;
+        System.out.println("total books: "+n);
+        System.out.println("total fines collected: $"+totalfine);
+        System.out.println("books overdue: "+overdue);
+        System.out.println("average: $"+avg);
+        
+    }
+}
