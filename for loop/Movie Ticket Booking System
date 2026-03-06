@@ -1,0 +1,63 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        double baseprice=0.0;
+            int discount=0;
+            double ticketprice=0.0;
+            double sumdiscount=0.0;
+            double sumbaseprice=0.0;
+            double sumticketprice=0.0;
+        String result=" ";
+        sc.nextLine();
+        for(int i=1;i<=n;i++){
+           
+            String seattype=sc.nextLine();
+            String customertype=sc.nextLine();
+            
+            if(seattype.equals("regular")){
+                baseprice=12;
+            }
+            else if(seattype.equals("premium")){
+                baseprice=18;
+            }
+            else if(seattype.equals("recliner")){
+                baseprice=25;
+            }
+            if(customertype.equals("adult")){
+                discount=0;
+            }
+            else if(customertype.equals("child")){
+                discount=30;
+            }
+            else if(customertype.equals("senior")){
+                discount=25;
+            }
+            ticketprice=baseprice*(1-discount/100.0);
+            sumbaseprice+=baseprice;
+            sumdiscount+=discount;
+            sumticketprice+=ticketprice;
+            System.out.print("ticket"+i+":");
+            
+            System.out.println(seattype+" - "+customertype);
+            System.out.println("base price: $"+baseprice);
+            System.out.println("discount: "+discount+"%");
+            System.out.println(String.format("final price: $%.1f",ticketprice));
+            System.out.println();
+        }
+        if(n>=5){
+            sumticketprice=sumticketprice*(10/100.0);
+            result="yes";
+        }
+        else{
+            result="no";
+        }
+        System.out.println("total tickets: "+n);
+        System.out.println("original total: $"+sumbaseprice);
+        System.out.println("total discount: "+sumdiscount+"%");
+        System.out.println(String.format("final total: $%.1f",sumticketprice));
+        System.out.println("group discount applied: "+result);
+        
+    }
+}
