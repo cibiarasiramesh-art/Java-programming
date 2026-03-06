@@ -1,0 +1,58 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        int warrantyperiod=0;
+        
+        String status=" ";
+        int expired=0;
+            int expiringsoon=0;
+        int active=0;
+        sc.nextLine();
+        for(int i=1;i<=n;i++){
+            String productid=sc.next();
+            String producttype=sc.next();
+            int months=sc.nextInt();
+            if(producttype.equals("electronics")){
+                warrantyperiod=12;
+            }
+            else if(producttype.equals("appliance")){
+                warrantyperiod=24;
+            }
+            else if(producttype.equals("computer")){
+                warrantyperiod=36;
+            }
+            int remaining=warrantyperiod-months;
+            if(remaining<0){
+                remaining=0;
+            }
+            if(remaining==0){
+                status="expired";
+                expired++;
+            }
+            else if(remaining>=1 && remaining<=3){
+                status="expiring soon";
+                expiringsoon++;
+            }
+            else if(remaining>3){
+                status="active";
+                active++;
+            }
+            System.out.println("productid: "+productid);
+            System.out.println("type: "+producttype);
+            System.out.println("warranty period: "+warrantyperiod+" months");
+            System.out.println("months used: "+months);
+            System.out.println("remaining: "+remaining);
+            System.out.println("status: "+status);
+            System.out.println();
+        
+        }
+        System.out.println("total products: "+n);
+        System.out.println("active warranties: "+active);
+        System.out.println("expiring soon: "+expiringsoon);
+        System.out.println("expired warranties: "+expired);
+        
+    }
+}
