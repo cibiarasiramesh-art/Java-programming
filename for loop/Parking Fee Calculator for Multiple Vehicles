@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        double hourlyrates=0.0;
+        int dailycap=0;
+        double parkingfee=0.0;
+        double totalparkingfee=0.0;
+        int count=0;
+        sc.nextLine();
+        for(int i=1;i<=n;i++){
+            String vechiletype=sc.next();
+            double hoursparked=sc.nextDouble();
+            if(vechiletype.equals("car")){
+                hourlyrates=3;
+                dailycap=30;
+            }
+            else if(vechiletype.equals("motorcycle")){
+                hourlyrates=2;
+                dailycap=20;
+            }
+            else if(vechiletype.equals("truck")){
+                hourlyrates=5;
+                dailycap=60;
+            }
+            else if(vechiletype.equals("bus")){
+                hourlyrates=7;
+                dailycap=100;
+            }
+            parkingfee=hoursparked*hourlyrates;
+        
+            totalparkingfee+=parkingfee;
+            System.out.println("vechile "+i+":"+vechiletype);
+            System.out.println("hours parked: "+hoursparked);
+            System.out.println("hourly rate: "+hourlyrates);
+            System.out.println("parking fee:"+parkingfee);
+            if(parkingfee>dailycap){
+                    System.out.println("cap applied: yes");
+            }
+            else{
+                System.out.println("cap applied: no");
+            }
+            System.out.println();
+            if(hoursparked>8){
+                count++;
+            }
+            
+            
+        }
+        double avgfee=totalparkingfee/n;
+        System.out.println("total vechiles: "+n);
+        System.out.println("total revenue: "+totalparkingfee);
+        System.out.println("average fee: "+avgfee);
+        System.out.println("peak hour vechiles: "+count);
+    }
+}
