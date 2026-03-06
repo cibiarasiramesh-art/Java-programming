@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int max=0;
+        int high=0;
+        sc.nextLine();
+        int score=0;
+        String result=" ";
+        int passcount=0;
+        int failcount=0;
+        double totalscore=0.0;
+        for(int i=1;i<=n;i++){
+            String studentname=sc.next();
+            int correctanswers=sc.nextInt();
+            int wronganswers=sc.nextInt();
+            int unattempted=sc.nextInt();
+            score=(correctanswers*4)-(wronganswers*3)+(unattempted*0);
+            if(score>=32){
+                result="pass";
+                passcount++;
+            }
+            else{
+                result="fail";
+                failcount++;
+            }
+            high=Math.max(score,max);
+            if(high==score){
+                max=score;
+            }
+            totalscore+=score;
+            System.out.println("student: "+studentname);
+            System.out.println("correct: "+correctanswers);
+            System.out.println("wrong: "+wronganswers);
+            System.out.println("unattempted: "+unattempted);
+            System.out.println("score: "+score);
+            System.out.println("result: "+result);
+            System.out.println();
+        }
+        double avg=totalscore/n;
+        System.out.println("total students: "+n);
+        System.out.println("pass count: "+passcount);
+        System.out.println("fail count: "+failcount);
+        System.out.println("class average: "+avg);
+        System.out.println("highest score: "+high);
+    }
+}
