@@ -1,0 +1,66 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        double renewalfees=0.0;
+        int discount=0;
+        String priority=" ";
+        int urgent=0;
+        sc.nextLine();
+         double totalrenue=0.0;
+        double finalfee=0.0;
+        for(int i=1;i<=n;i++){
+            String membername=sc.next();
+            String membertype=sc.next();
+            int daysunitexpiry=sc.nextInt();
+            if(membertype.equals("basic")){
+                renewalfees=50;
+            }
+            else if(membertype.equals("premium")){
+                renewalfees=100;
+            }
+            else if(membertype.equals("VIP")){
+                renewalfees=200;
+            }
+            if(daysunitexpiry>45){
+                discount=20;
+            }
+            else if(daysunitexpiry>=30 && daysunitexpiry<=44){
+                discount=15;
+            }
+            else if(daysunitexpiry>=15 && daysunitexpiry<=29){
+                discount=10;
+            }
+            else if(daysunitexpiry<15){
+                discount=0;
+            }
+            if(daysunitexpiry<10){
+                priority="urgent";
+                urgent++;
+            }
+            else if(daysunitexpiry>=10 && daysunitexpiry<=30){
+                priority="high";
+            }
+            else if(daysunitexpiry>30){
+                priority="normal";
+            }
+            finalfee=renewalfees*(1-discount/100.0);
+            totalrenue+=renewalfees;
+            System.out.println("member: "+membername);
+            System.out.println("membership: "+membertype);
+            System.out.println("days unit expiry: "+daysunitexpiry);
+            System.out.println("renewal fee: "+renewalfees);
+            System.out.println("discount: "+discount);
+            System.out.println("final fee: "+finalfee);
+            System.out.println("priority: "+priority);
+            System.out.println();
+        }
+        double avg=totalrenue/n;
+        System.out.println("total members: "+n);
+        System.out.println("urgent renewals: "+urgent);
+        System.out.println("total renewal revenue: "+totalrenue);
+        System.out.println("acerage renewa; fee: "+avg);
+    }
+    
+}
