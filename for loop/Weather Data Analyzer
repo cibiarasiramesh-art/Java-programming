@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String status=" ";
+        double max=0.0;
+        double min=0.0;
+        int hothrscount=0;
+        int coldhrscount=0;
+        int totaltemp=0;
+        int correshour=0;
+       
+        for(int i=1;i<=n;i++){
+            int hour=sc.nextInt();
+            double temperature=sc.nextDouble();
+            if(temperature>40 || temperature<0){
+                status="extreme";
+            }
+            else if(temperature>=32 && temperature<=40){
+                status="hot";
+            }
+            else if(temperature>=0 && temperature<=10){
+                status="cold";
+            }
+            else if(temperature>=10 && temperature<-32){
+                status="normal";
+            }
+            if(temperature>max){
+                max=temperature;
+                correshour=hour;
+            }
+            if(temperature<min){
+                min=temperature;
+                correshour=hour;
+            }
+            if(temperature>=32){
+                hothrscount++;
+            }
+            else if(temperature<=10){
+                coldhrscount++;
+            }
+            totaltemp+=temperature;
+            System.out.println("hour "+hour+": "+temperature);
+            System.out.println("status: "+status);
+            System.out.println();
+        }
+        double avg=totaltemp/n;
+        System.out.println("total readings: "+n);
+        System.out.println("average temperature: "+avg);
+        System.out.println("highest temperature: "+max+"c at hour "+correshour);
+        System.out.println("lowest temperature: "+min+"c at hour "+correshour);
+        System.out.println("hot hours: "+hothrscount);
+        System.out.println("cold hours: "+coldhrscount);
+    }
+}
