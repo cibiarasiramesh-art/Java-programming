@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        double totalDeposit = 0.0;
+        double totalWithdrawals = 0.0;
+        double totalTransfer = 0.0;
+        double totalPayment = 0.0;
+
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+
+            String category = "";
+            String transactionType = sc.next();
+            double amount = sc.nextDouble();
+
+            if (transactionType.equals("deposit")) {
+                category = "credit";
+                totalDeposit += amount;
+            } 
+            else if (transactionType.equals("withdrawal")) {
+                category = "debit";
+                totalWithdrawals += amount;
+            } 
+            else if (transactionType.equals("transfer")) {
+                category = "debit";
+                totalTransfer += amount;
+            } 
+            else if (transactionType.equals("payment")) {
+                category = "debit";
+                totalPayment += amount;
+            }
+
+            System.out.println("transaction " + i + ": " + transactionType);
+            System.out.println("amount: $" + amount);
+            System.out.println("category: " + category);
+            System.out.println();
+        }
+
+        double netBalance = totalDeposit - (totalWithdrawals + totalTransfer + totalPayment);
+
+        System.out.println("total transactions: " + n);
+        System.out.println("total deposits: $" + totalDeposit);
+        System.out.println("total withdrawals: $" + totalWithdrawals);
+        System.out.println("total transfers: $" + totalTransfer);
+        System.out.println("total payments: $" + totalPayment);
+        System.out.println("net balance change: $" + netBalance);
+    }
+}
