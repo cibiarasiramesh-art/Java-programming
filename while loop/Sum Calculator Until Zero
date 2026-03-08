@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int i=-1;
+        int count=0;
+        int sum=0;
+        while(i !=0){
+             i=sc.nextInt();
+            System.out.println("enter number (0 to stop): "+i);
+             
+            if(i!=0){
+                 sum=sum+i;
+                count++;
+            }
+           
+            
+        }
+        System.out.println("total sum: "+sum);
+        System.out.println("count: "+count);
+    }
+}
