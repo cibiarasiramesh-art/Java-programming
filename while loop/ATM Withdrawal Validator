@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int bal=sc.nextInt();
+        int i=1;
+        System.out.println("balance: "+bal);
+        while(i!=0){
+            int amt=sc.nextInt();
+            System.out.println("enter withdrawal amount: "+amt);
+            if(amt>bal){
+                System.out.println("insufficient funds! try again");
+            }
+            else if(amt<bal){
+                int sub=bal-amt;
+                System.out.println("withdrawal successful remaining balance: "+sub);
+                 bal=sub;
+            }
+            else if(amt==bal){
+                System.out.println("withdrawal successful remaing balance: 0");
+                break;
+            }
+           
+        }
+    }
+}
