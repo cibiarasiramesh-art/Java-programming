@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int org=n;
+        int i=1;
+        int add=0;
+        if(n<=0){
+            System.out.println(n+" is not a perfect number");
+            return;
+        }
+        while(i<=n/2){
+            if(n%i==0){
+                add=add+i;
+            }
+            i++;
+            
+        }
+        if(add==org){
+            System.out.println(org+" is a perfect number");
+        }
+        else{
+            System.out.println(org+" is not a perfect number");
+        }
+    }
+}
