@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int i=2;
+        int prime=0;
+        if(n<1){
+            prime=0;
+            
+        }
+        while(i<n){
+            if(n>1){
+                if(n%i!=0){
+                    prime=1;
+                    
+                }
+                else{
+                    prime=0;
+                    break;
+                    
+                }
+                
+            }
+            i++;
+            
+        }
+        if(prime==0){
+            System.out.println(n+" is not a prime");
+        }
+        else if(prime==1){
+            System.out.println(n+" is prime");
+        }
+    }
+}
