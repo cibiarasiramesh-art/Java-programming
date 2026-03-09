@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int org=n;
+        int org2=org;
+        int count=0;
+        if(n<0){
+            System.out.println(n+" is not a amstrong number");
+            return;
+        }
+        while(n!=0){
+            int rem=n%10;
+            n=n/10;
+            count++;
+        }
+        int add=0;
+        while(org2!=0){
+            int rem2=org2%10;
+            org2=org2/10;
+            int val=(int)Math.pow(rem2,count);
+            add=add+val;
+        }
+        if(add==org){
+            System.out.println(org+" is a amstrong number");
+        }
+        else{
+            System.out.println(org+" is not a amstrong number");
+        }
+    }
+}
