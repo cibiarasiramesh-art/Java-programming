@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+       int add=0;
+        int i=0;
+        
+        while(n!=0){
+             int rem=n%10;
+            if(rem==1 || rem==0){
+                 int val=(int)Math.pow(2, i);
+            int res=rem*val;
+            add=add+res;
+            n=n/10;
+            i++;
+            }
+            else{
+                System.out.println("invalid input");
+                return;
+            }
+           
+        }
+        System.out.println(add);
+    }
+}
