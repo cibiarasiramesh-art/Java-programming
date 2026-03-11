@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class lcm {
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int tempa=a;
+        int tempb=b;
+        while(b>0){
+            int rem=a%b;
+            a=b;
+            b=rem;
+        }
+        int res=(tempa*tempb)/a;
+        System.out.println("the lcm of "+tempa+" and "+tempb+" = "+res);
+        
+    }
+}
