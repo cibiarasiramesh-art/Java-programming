@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class hcf {
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int max=0;
+        int i=1;
+        int min=Math.min(a,b);
+        while(i<=min){
+            if(a%i==0 && b%i==0){
+                int h=i;
+                if(h>max){
+                    max=h;
+                }
+
+            }
+            i++;
+        }
+        System.out.println(max);
+    }
+}
