@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class atmwithdraw {
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int bal=sc.nextInt();
+        int amt=sc.nextInt();
+        do{
+            if(amt<=bal&&amt>0){
+                System.out.println("withdrawal successful! remaining balance: "+(bal-amt));
+            }
+            else{
+                System.out.println("invalid amount! try again");
+                amt=sc.nextInt();
+                if(amt<=bal && amt>0){
+                    System.out.println("withdrawal successfull remaining balance: "+(bal-amt));
+                }
+
+            }
+            
+        }
+        while(amt>bal);
+    }
+}
