@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class PatternPrinterRightTriangle {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int row=sc.nextInt();
+        sc.nextLine();
+        String st=sc.nextLine();
+        for(int i=1;i<=row;i++){
+            for(int j=1;j<=i;j++){
+                if(st.equals("star")){
+                    System.out.print("*");
+                }
+                else if(st.equals("number")){
+                    System.out.print(j);
+                }
+            }
+            System.out.println();
+                
+            }
+        }
+    }
+    
