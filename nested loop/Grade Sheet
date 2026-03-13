@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class GradeSheet{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        int sub=sc.nextInt();
+        System.out.println("Grade Sheer: ");
+        System.out.print("Student ");
+        for(int i=1;i<=sub;i++){
+            System.out.print("sub"+i+" ");
+        }
+        System.out.print("Average");
+        
+
+        for(int i=1;i<=num;i++){
+            sc.nextLine();
+            String name=sc.next();
+            System.out.print(name+" ");
+            int sum=0;
+            for(int j=1;j<=sub;j++){
+                int mark=sc.nextInt();
+                System.out.print(mark+" ");
+                sum=sum+mark;
+
+            }
+            double avg=sum/sub;
+            System.out.printf("%.2f",avg);
+        }
+
+
+    }
+}
