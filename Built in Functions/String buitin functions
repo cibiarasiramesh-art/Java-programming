@@ -1,0 +1,29 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+import java.util.Arrays;
+
+public class BuiltinFunctioninString {
+   public BuiltinFunctioninString() {
+   }
+
+   public static void main(String[] var0) {
+      String var1 = "love you universe!";
+      System.out.println("length: " + var1.length());
+      System.out.println("charAt(0): " + var1.charAt(0));
+      System.out.println("substring: " + var1.substring(1, 9));
+      System.out.println("comapare: " + var1.equals("love you universe"));
+      System.out.println("touppercase: " + var1.toUpperCase());
+      System.out.println("tolowercase: " + var1.toLowerCase());
+      System.out.println("trim: " + var1.trim());
+      System.out.println("replace: " + var1.replace('o', 'z'));
+      System.out.println("index of: " + var1.indexOf(111));
+      String[] var2 = var1.split(" ");
+      System.out.println("split: " + Arrays.toString(var2));
+      System.out.println("contains: " + var1.contains("love"));
+      System.out.println("equals ignorance: " + var1.equalsIgnoreCase("love u universe!"));
+
+      for(String var6 : var2) {
+         System.out.println(var6);
+      }
+
+   }
+}
