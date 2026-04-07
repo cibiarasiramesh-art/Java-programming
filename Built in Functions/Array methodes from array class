@@ -1,0 +1,23 @@
+import java.util.*;
+import java.util.Arrays;
+
+
+public class BuiltInFunctionInArray {
+    public static void main(String[] args){
+        int[] arr1={1,2,3,4,5};
+        int[] arr2={1,2,3,4,5};
+        Arrays.sort(arr1);
+        System.out.println("short: "+Arrays.toString(arr1));
+        System.out.println("compare: "+Arrays.equals(arr1,arr2));
+        int arr[]=new int[5];
+        Arrays.fill(arr,10);
+        System.out.println("fill: "+Arrays.toString(arr)); 
+        Arrays.copyOf(arr,3);
+        System.out.println("change index value: "+Arrays.toString(arr)); 
+
+
+
+
+
+    }
+}
