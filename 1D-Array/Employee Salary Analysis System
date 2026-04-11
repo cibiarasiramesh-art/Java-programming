@@ -1,0 +1,33 @@
+import java.util.*;
+public class Array1{
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        float[] arr=new float[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextFloat();
+        }
+        float sum=0;
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+
+        }
+        float above=0;
+        float avg=sum/n;
+       
+        for(int i=0;i<n;i++){
+            if(arr[i]>avg){
+                above++;
+
+
+            }
+        }
+         float percent=(above/n)*100;
+        System.out.println("Total Employees: "+n);
+        System.out.println("Average Salary: "+avg);
+        System.out.println("Employees Above Average: "+(int)above);
+        System.out.printf("Percentafe: %.2f",percent);
+
+    }
+
+}
