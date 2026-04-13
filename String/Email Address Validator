@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class String1{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        sc.nextLine();
+       
+        int valid=0;
+        int invalid=0;
+        String res;
+         System.out.println("Email Validation Results: ");
+        for(int i=1;i<=n;i++){
+            String email=sc.nextLine();
+            int at=email.indexOf('@');
+            int dot=email.indexOf('.',at);
+            if(at>0 && at==email.lastIndexOf('@') && dot>at && dot<email.length()-1){
+                valid++;
+                res="valid";
+            }
+            else{
+                invalid++;
+                res="invalid";
+            }
+            System.out.println(i+" ."+email+" - "+res);
+            
+        }
+        System.out.println("Total valid: "+valid);
+            System.out.println("Total invalid: "+invalid);
+       
+
+
+    }
+}
