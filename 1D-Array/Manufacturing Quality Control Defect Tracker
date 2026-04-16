@@ -1,0 +1,28 @@
+import java.util.*;
+public class Array7 {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int count=0;
+        ArrayList<Integer> index=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(arr[i]>m){
+                count++;
+                index.add(i+1);
+            }
+        }
+        double cmp=n-count;
+        double comprate=(cmp/n)*100;
+        System.out.println("Production Lines: "+n);
+        System.out.println("Acceptable Threshold: "+m);
+        System.out.println("Lines Exceeding Threshold: "+count);
+        System.out.println("Critical Lines: "+index);
+        System.out.printf("Compilance Rate: %.2f",comprate);
+    }
+    
+}
