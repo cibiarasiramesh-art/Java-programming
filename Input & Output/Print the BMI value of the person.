@@ -1,0 +1,10 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int w=sc.nextInt();
+        float h=sc.nextFloat();
+        float bmi=(float)w/(h*h);
+        System.out.printf("BMI = %.2f",bmi);
+    }
+}
