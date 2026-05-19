@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        float f=sc.nextFloat();
+        double y=f*1760.0;
+        double fe=f*5280.0;
+        double i=f*63360.0;
+        System.out.printf("Yards: %.1f",y);
+        System.out.println();
+        System.out.printf("Feet: %.1f",fe);
+        System.out.println();
+        System.out.printf("Inches: %.1f",i);
+    }
+}
