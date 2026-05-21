@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a=n/100;
+        int rem1=n-a*100;
+        System.out.printf("%d Note(s) of %.2f",a,(float)100);
+        System.out.println();
+        int b=rem1/50;
+        int rem2=rem1-b*50;
+        System.out.printf("%d Note(s) of %.2f",b,(float)50);
+        System.out.println();
+        int c=rem2/20;
+        int rem3=rem2-c*20;
+        System.out.printf("%d Note(s) of %.2f",c,(float)20);
+        System.out.println();
+        int d=rem3/10;
+        int rem4=rem3-d*10;
+        System.out.printf("%d Note(s) of %.2f",d,(float)10);
+        System.out.println();
+        int e=rem4/5;
+        int rem5=rem4-e*5;
+        System.out.printf("%d Note(s) of %.2f",e,(float)5);
+        System.out.println();
+        int f=rem5/2;
+        int rem6=rem5-f*2;
+        System.out.printf("%d Note(s) of %.2f",f,(float)2);
+        System.out.println();
+        int g=rem6/1;
+        int rem7=rem6-g*1;
+        System.out.printf("%d Note(s) of %.2f",g,(float)1);
+        System.out.println();
