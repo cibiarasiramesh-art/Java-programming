@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        double f=30.49;
+        double i=2.54;
+        
+        double in=n/i;
+        int fe=(int)in/12;
+        
+        in=in%12;
+    
+        System.out.print("Height in feet and inches: "+fe);
+        System.out.printf("' %.1f\" ",in);
+    }
+}
