@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        double d=sc.nextDouble();
+        double k=d*1.60934;
+        double m=d*1609.34;
+        double c=d*160934.0;
+        System.out.printf("Kilometers: %.5f",k);
+        System.out.println();
+        System.out.printf("Meters: %.2f",m);
+        System.out.println();
+        System.out.printf("Centimeters: %.1f",c);
+        
+        
+    }
+}
