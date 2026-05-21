@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int yr=n/365;
+        int rem1=n-365*yr;
+        int wk=rem1/7;
+        int rem2=rem1-wk*7;
+        System.out.println("Years: "+yr);
+        System.out.println("Weeks: "+wk);
+        System.out.println("Days: "+rem2);
+    }
+}
