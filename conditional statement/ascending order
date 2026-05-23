@@ -1,0 +1,58 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+
+        int temp;
+
+        // a and b
+        if(a < b){
+            temp = a;
+            a = b;
+            b = temp;
+        }
+
+        // a and c
+        if(a < c){
+            temp = a;
+            a = c;
+            c = temp;
+        }
+
+        if(a < d){
+            temp = a;
+            a = d;
+            d = temp;
+        }
+
+        // b and c
+        if(b < c){
+            temp = b;
+            b = c;
+            c = temp;
+        }
+
+  
+        if(b < d){
+            temp = b;
+            b = d;
+            d = temp;
+        }
+
+
+        if(c < d){
+            temp = c;
+            c = d;
+            d = temp;
+        }
+
+        System.out.println(a + ">" + b + ">" + c + ">" + d);
+    }
+}
