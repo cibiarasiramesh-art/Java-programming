@@ -1,0 +1,21 @@
+import java.util.*;
+public class Reactangle{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        Area a=new Area();
+        a.len=4;
+        a.bre=5;
+        a.display(a.len,a.bre);
+
+
+    }
+
+}
+class Area {
+    int len;
+    int bre;
+    void display(int len,int bre){
+        System.out.println(len*bre);
+    }
+    
+}
