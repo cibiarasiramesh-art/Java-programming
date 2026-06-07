@@ -1,0 +1,20 @@
+import java.util.*;
+class Area {
+    int r;
+    double pi;
+    void display(){
+        System.out.println(pi*r*r);
+    }
+    
+}
+public class Circle{
+public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    Area a=new Area();
+    a.r=7;
+    a.pi=3.14;
+    a.display();
+
+
+}
+}
