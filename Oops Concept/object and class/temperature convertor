@@ -1,0 +1,17 @@
+import java.util.*;
+class Faren{
+    int cel;
+    void display(){
+        System.out.println((cel*9/5)+32);
+    }
+
+}
+public class Temperature {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        Faren a= new Faren();
+        a.cel=30;
+        a.display();
+    }
+    
+}
