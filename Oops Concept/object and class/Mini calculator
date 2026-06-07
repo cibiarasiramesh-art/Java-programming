@@ -1,0 +1,33 @@
+import java.util.*;
+class Minicalci{
+    int a;
+    int b;
+    void add(){
+        System.out.println("Add "+ a+b);
+    }
+     void sub(){
+        System.out.println("sub "+ (a-b));
+    }
+     void mul(){
+        System.out.println("mul "+ a*b);
+    }
+     void div(){
+        System.out.println("div "+ a/b);
+    } 
+
+}
+public class Calci {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        Minicalci cal=new Minicalci();
+        cal.a=sc.nextInt();
+        cal.b=sc.nextInt();
+        cal.add();
+        cal.sub();
+        cal.mul();
+        cal.div();
+
+
+    }
+    
+}
