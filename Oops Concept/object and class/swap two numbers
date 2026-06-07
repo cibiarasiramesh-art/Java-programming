@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Swapping{
+    int a;
+    int b;
+    void fun(){
+        System.out.printf("a= "+a);
+        System.out.println(" b= "+b);
+        
+    }
+    
+}
+public class Swap {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        Swapping s=new Swapping();
+        s.a=4;
+        s.b=5;
+        int temp=s.a;
+        s.a=s.b;
+        s.b=temp;
+        s.fun();
+        
+    }
+    
+}
