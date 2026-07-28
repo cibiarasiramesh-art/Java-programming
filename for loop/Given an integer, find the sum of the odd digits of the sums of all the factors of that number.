@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long sum=0;
+        long n=sc.nextLong();
+        for(long i=1;i<=n;i++){
+            if(n%i==0){
+                sum+=i;
+                
+            }
+        }
+        long oddsum=0;
+        while(sum!=0){
+            
+            long rem=sum%10;
+            if(rem%2!=0){
+                oddsum+=rem;
+                
+            }
+            sum=sum/10;
+            
+        }
+        System.out.print(oddsum);
+    }
+}
