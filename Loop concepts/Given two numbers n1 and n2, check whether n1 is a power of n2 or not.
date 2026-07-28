@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        long m=sc.nextLong();
+        int i=1;
+        boolean val=false;
+        while(Math.pow(m,i)<=n){
+            if(Math.pow(m,i)==n){
+                val=true;
+                break;
+                
+            }
+            i++;
+            
+        }
+        if(val==true){
+             System.out.print("Yes");
+        }
+        else{
+            System.out.print("No");
+        }
+       
+        
+    }
+}
