@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        long start=(long)Math.pow(10,n-1);
+        long end=(long)Math.pow(10,n)-1;
+        long val1=0;
+        long val2=0;
+        for(long i=start;i<=end;i++){
+            long root=Math.round(Math.cbrt(i));
+            if(root*root*root==i){
+                val1=i;
+                break;
+                
+            }
+            
+            
+           
+            
+        }
+        for(long i=end;i>=start;i--){
+            long root=Math.round(Math.cbrt(i));
+            if(root*root*root==i){
+                val2=i;
+                break;
+                
+            }
+        }
+        System.out.print(val1+" "+val2);
+    }
+}
