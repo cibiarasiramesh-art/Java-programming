@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long q=sc.nextLong();
+        
+        for(long i=1;i<=q;i++){
+            long oddsum=0;
+            long n=sc.nextLong();
+            for(long j=1;j<=n;j++){
+                if(n%j==0){
+                    long org=j;
+                    while(org!=0){
+                        long rem=org%10;
+                        if(rem%2!=0){
+                            oddsum+=rem;
+                        }
+                        org=org/10;
+                    }
+                }
+            }
+             System.out.println(oddsum);
+        }
+       
+        
+    }
+}
