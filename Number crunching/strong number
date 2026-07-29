@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main{ 
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        long orgn=n;
+        long sum=0;
+        while(n!=0){
+            long val=1;
+            long rem=n%10;
+            for(long i=rem;i>=1;i--){
+                val=val*i;
+                
+            }
+            sum+=val;
+            n/=10;
+            
+        }
+        if(orgn==sum){
+            System.out.print("Yes");
+        }
+        else{
+            System.out.print("No");
+        }
+    }
+}
