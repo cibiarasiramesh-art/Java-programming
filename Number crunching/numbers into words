@@ -1,0 +1,58 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        String s=String.valueOf(n);
+         long len=s.length();
+        String rev=new StringBuilder(s).reverse().toString();
+       
+        long num=Long.parseLong(rev);
+        long count=0;
+        
+        while(num!=0){
+            count++;
+            long rem=num%10;
+            if(rem==1){
+                System.out.print("one"+" ");
+            }
+            else if(rem==2){
+                System.out.print("two"+" ");
+            }
+             else if(rem==2){
+                System.out.print("two"+" ");
+            }
+             else if(rem==3){
+                System.out.print("three"+" ");
+            }
+             else if(rem==4){
+                System.out.print("four"+" ");
+            }
+             else if(rem==5){
+                System.out.print("five"+" ");
+            }
+             else if(rem==6){
+                System.out.print("six"+" ");
+            } else if(rem==7){
+                System.out.print("seven"+" ");
+            }
+             else if(rem==8){
+                System.out.print("eight"+" ");
+            }
+             else if(rem==9){
+                System.out.print("nine"+" ");
+            }
+             else {
+                System.out.print("zero"+" ");
+            }
+            num/=10;
+            
+        }
+        if(count!=len){
+            long v=len-count;
+            for(long i=1;i<=v;i++){
+                System.out.print("zero"+" ");
+            }
+        }
+    }
+}
