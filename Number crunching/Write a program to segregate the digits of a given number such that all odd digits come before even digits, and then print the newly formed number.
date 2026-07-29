@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long n = sc.nextLong();
+        String str = String.valueOf(n);
+        String strev = new StringBuilder(str).reverse().toString();
+        long len=strev.length();
+        long num = Long.parseLong(strev);
+        String odd = "";
+        String even = "";
+        while (num != 0) {
+            long rem = num % 10;
+            if (rem % 2 != 0) {
+                odd = odd + rem;
+            }
+            num = num / 10;
+        }
+        long orgn = Long.parseLong(strev);
+        while (orgn != 0) {
+            long rem = orgn % 10;
+            if (rem % 2 == 0) {
+                even = even + rem;
+            }
+            orgn = orgn / 10;
+        }
+        System.out.print(odd + even);
+        String res=odd+even;
+        if(len!=res.length()){
+            long sub=len-res.length();
+            for(int i=1;i<=sub;i++){
+                System.out.print("0");
+            }
+            
+        }
+        
+    }
+}
