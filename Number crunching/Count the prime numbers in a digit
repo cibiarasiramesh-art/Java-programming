@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        long count=0;
+        while(n!=0){
+            long rem=n%10;
+            boolean isprime=true;
+            if(rem!=1 && rem==2){
+                isprime=true;
+                count++;
+            }
+            if(rem>2){
+                for(long i=2;i*i<=rem;i++){
+                    if(rem%i==0){
+                        isprime=false;
+                        break;
+                    }
+                    else if(rem%i!=0){
+                        isprime=true;
+                    }
+                    
+                }
+                if(isprime){
+                    count++;
+                }
+                
+                
+            }
+            n/=10;
+        }
+        System.out.print(count);
+        
+    }
+}
