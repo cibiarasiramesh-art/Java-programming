@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long num=sc.nextLong();
+        String orgstr=String.valueOf(num);
+        String revstr=new StringBuilder(orgstr).reverse().toString();
+        if(revstr.equals(orgstr)){
+            System.out.print("Yes");
+        }
+        else{
+            System.out.print("No");
+        }
+    }
+}
