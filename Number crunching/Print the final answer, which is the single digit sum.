@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        while(n>=10){
+            long sum=0;
+            while(n!=0){
+                long rem=n%10;
+                sum+=rem;
+                n/=10;
+            }
+            n=sum;
+        }
+        System.out.print(n);
+}
+}
