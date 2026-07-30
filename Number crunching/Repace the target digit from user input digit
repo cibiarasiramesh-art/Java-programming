@@ -1,0 +1,12 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long num=sc.nextLong();
+        long onum=sc.nextLong();
+        long rnum=sc.nextLong();
+        String str=String.valueOf(num);
+        str=str.replace((char)(onum+'0'),(char)(rnum+'0'));
+        System.out.print(str);
+    }
+}
